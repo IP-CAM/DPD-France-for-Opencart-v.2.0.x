@@ -1,0 +1,57 @@
+<!--
+/**
+ * DPD France v5.1.0 shipping module for OpenCart 2.0
+ *
+ * @category   DPDFrance
+ * @package    DPDFrance_Shipping
+ * @author     DPD S.A.S. <ensavoirplus.ecommerce@dpd.fr>
+ * @copyright  2015 DPD S.A.S., société par actions simplifiée, au capital de 18.500.000 euros, dont le siège social est situé 27 Rue du Colonel Pierre Avia - 75015 PARIS, immatriculée au registre du commerce et des sociétés de Paris sous le numéro 444 420 830 
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<modification>
+	<id>Livraison DPD</id>
+	<version>2.0.x</version>
+	<vqmver>2.4.0</vqmver>
+	<author>DPD S.A.S.</author>
+	<file name="admin/controller/common/menu.php">
+		<operation error="abort">
+			<search position="after"><![CDATA[$data['order_recurring'] = $this->url->link('sale/recurring', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[$data['dpdfrance'] = $this->url->link('sale/dpdfrance', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+		</operation>
+	</file>
+	<file name="admin/view/template/common/menu.tpl">
+		<operation error="abort">
+			<search position="after"><![CDATA[<li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>]]></search>
+			<add><![CDATA[<li><a href="<?php echo $dpdfrance; ?>">DPD France</a></li>]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/checkout/shipping_method.php">
+		<operation error="abort">
+			<search position="replace"><![CDATA[$this->session->data['shipping_method'] = $this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]];]]></search>
+			<add><![CDATA[
+				switch ($shipping[0]){
+					case 'dpdfrrelais':
+						$infos = array_map("strip_tags",$this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]]);
+						$title = 'Livraison DPD Relais - '.substr($infos['title'],0,-35);
+						$infos['title'] = $title;
+						$this->session->data['shipping_method'] = $infos;
+					break;
+					case 'dpdfrpredict':
+						if (!isset($_COOKIE['dpdfrpredict_gsm']) || !preg_match('/^(\+33|0)[67][0-9]{8}$/', $_COOKIE['dpdfrpredict_gsm']))
+							echo '- Votre livraison Predict par DPD : Afin de vous livrer dans les meilleures conditions, merci de renseigner un numero de portable francais correct avant de valider votre mode de livraison (commencant par 06 ou 07, sur 10 chiffres).  ';
+						else{
+							$infos = array_map("strip_tags",$this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]]);
+							$title = 'Livraison Predict par DPD - (GSM: '.$_COOKIE['dpdfrpredict_gsm'].')';
+							$infos['title'] = $title;
+							$this->session->data['shipping_method'] = $infos; // On pousse l'array en session
+						}
+					break;
+					default:
+						$this->session->data['shipping_method'] = $this->session->data['shipping_methods'][$shipping[0]]['quote'][$shipping[1]];
+					break;
+				}]]></add>
+		</operation>
+	</file>
+</modification>
