@@ -50,18 +50,18 @@ class ModelShippingDpdfrrelais extends Model {
 			// $postcode = $address['postcode']; // DPD Relais : postcode is given in params to appply overcost on each relaypoint
 
 			if (substr($postcode,0,2)== '20'){
-				$shipping_cost += (float)$this->config->get('dpdfrpredict_suppiles');
-				if ((float)$this->config->get('dpdfrpredict_suppiles') < 0)
+				$shipping_cost += (float)$this->config->get('dpdfrrelais_suppiles');
+				if ((float)$this->config->get('dpdfrrelais_suppiles') < 0)
 					return false;
 			}
 			if (in_array($postcode, $iles)){
-				$shipping_cost += (float)$this->config->get('dpdfrpredict_suppiles');
-				if ((float)$this->config->get('dpdfrpredict_suppiles') < 0)
+				$shipping_cost += (float)$this->config->get('dpdfrrelais_suppiles');
+				if ((float)$this->config->get('dpdfrrelais_suppiles') < 0)
 					return false;
 			}
 			if (in_array($postcode, $montagne)){
-				$shipping_cost += (float)$this->config->get('dpdfrpredict_suppmontagne');
-				if ((float)$this->config->get('dpdfrpredict_suppmontagne') < 0)
+				$shipping_cost += (float)$this->config->get('dpdfrrelais_suppmontagne');
+				if ((float)$this->config->get('dpdfrrelais_suppmontagne') < 0)
 					return false;
 			}
 		}
