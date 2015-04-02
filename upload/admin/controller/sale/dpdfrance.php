@@ -161,7 +161,7 @@ class ControllerSaleDpdfrance extends Controller {
 				}
 				$data = array(	'notify' => 1, 
 								'order_status_id' => '15', 
-								'comment' => 'Cher client, vous pouvez suivre l\'acheminement de votre colis par DPD en cliquant sur le lien ci-contre : http://www.dpd.fr/tracer_'.$order_id.'_'.$agence.$compte_chargeur.'.html'
+								'comment' => 'Cher client, vous pouvez suivre l\'acheminement de votre colis par DPD en cliquant sur le lien ci-contre : http://www.dpd.fr/tracer_'.$order_id.'_'.$agence.$compte_chargeur
 								);
 				$this->model_sale_dpdfrance->addOrderHistory($order_id, $data);	
 			}
@@ -369,23 +369,23 @@ class ControllerSaleDpdfrance extends Controller {
 					$service = 'Relais';
 					$icon = '<span style="font-size:0px;">Relais</span><img src="../image/data/dpdfrance/admin/service_relais.png" alt="Relais" title="Relais"/>';
 					$address = $result['relais_address'];
-					$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrrelais_agence').$this->config->get('dpdfrrelais_cargo').'.html" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
+					$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrrelais_agence').$this->config->get('dpdfrrelais_cargo').'" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
 				}else if (strpos($result['shipping_code'], 'dpdfrpredict') !== false){
 					$service = 'Predict';
 					$icon = '<span style="font-size:0px;">Predict</span><img src="../image/data/dpdfrance/admin/service_predict.png" alt="Predict" title="Predict"/>';
 					$address = $result['address'];
-					$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrpredict_agence').$this->config->get('dpdfrpredict_cargo').'.html" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
+					$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrpredict_agence').$this->config->get('dpdfrpredict_cargo').'" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
 				}else{
 					if ($shipping_iso_code_2 == 'FR'){
 						$service = 'Classic';
 						$icon = '<span style="font-size:0px;">Classic</span><img src="../image/data/dpdfrance/admin/service_dom.png" alt="Classic" title="Classic"/>';
 						$address = $result['address'];
-						$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrclassic_agence').$this->config->get('dpdfrclassic_cargo').'.html" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
+						$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrclassic_agence').$this->config->get('dpdfrclassic_cargo').'" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
 					}else{
 						$service = 'Classic';
 						$icon = '<span style="font-size:0px;">Classic</span><img src="../image/data/dpdfrance/admin/service_world.png" alt="Intercontinental" title="Intercontinental"/>';
 						$address = $result['address'];
-						$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrclassic_agence').$this->config->get('dpdfrclassic_cargo').'.html" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
+						$link = '<a href="http://www.dpd.fr/tracer_'.$result['order_id'].'_'.$this->config->get('dpdfrclassic_agence').$this->config->get('dpdfrclassic_cargo').'" target="_blank"><img src="../image/data/dpdfrance/admin/tracking.png"/></a>';
 					}
 				}
 			$data['orders'][] = array(
