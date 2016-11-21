@@ -37,71 +37,81 @@
             <div class="col-sm-10">
               <div class="tab-content">
                 <div class="tab-pane active" id="tab-general">
-				<div class="form-group">
+                <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
                     <div class="col-sm-10">
-						<select name="dpdfrrelais_status" class="form-control">
-							<?php if ($dpdfrrelais_status) { ?>
-							<option value="1" selected="selected"><?php echo $text_enabled; ?></option>
-							<option value="0"><?php echo $text_disabled; ?></option>
-							<?php } else { ?>
-							<option value="1"><?php echo $text_enabled; ?></option>
-							<option value="0" selected="selected"><?php echo $text_disabled; ?></option>
-							<?php } ?>
-						</select> <?php echo $text_activate; ?>
-					</div>
-				</div>
-				<div class="form-group">
+                        <select name="dpdfrrelais_status" class="form-control">
+                            <?php if ($dpdfrrelais_status) { ?>
+                            <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                            <option value="0"><?php echo $text_disabled; ?></option>
+                            <?php } else { ?>
+                            <option value="1"><?php echo $text_enabled; ?></option>
+                            <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                            <?php } ?>
+                        </select> <?php echo $text_activate; ?>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label"><?php echo $entry_mypudo; ?></label>
                     <div class="col-sm-10">
-						<input type="text" name="dpdfrrelais_mypudo" class="form-control" value="<?php echo $dpdfrrelais_mypudo; ?>" size="69" /> <?php echo $text_mypudo; ?>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label"><?php echo $entry_agence; ?></label>
-					<div class="col-sm-10">
-						<input type="text" name="dpdfrrelais_agence" class="form-control" value="<?php echo $dpdfrrelais_agence; ?>" size="3" /> <?php echo $text_agence; ?>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label"><?php echo $entry_cargo; ?></label>
-					<div class="col-sm-10">
-						<input type="text" name="dpdfrrelais_cargo" class="form-control" value="<?php echo $dpdfrrelais_cargo; ?>" size="3" /> <?php echo $text_cargo; ?>
-					</div>
-				</div>
-				<div class="form-group">
+                        <input type="text" name="dpdfrrelais_mypudo" class="form-control" value="<?php echo $dpdfrrelais_mypudo; ?>" size="69" /> <?php echo $text_mypudo; ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?php echo $entry_agence; ?></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="dpdfrrelais_agence" class="form-control" value="<?php echo $dpdfrrelais_agence; ?>" size="3" /> <?php echo $text_agence; ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?php echo $entry_cargo; ?></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="dpdfrrelais_cargo" class="form-control" value="<?php echo $dpdfrrelais_cargo; ?>" size="3" /> <?php echo $text_cargo; ?>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_advalorem; ?></label>
                     <div class="col-sm-10">
-						<select name="dpdfrrelais_advalorem" class="form-control">
-							<?php if ($dpdfrrelais_advalorem) { ?>
-							<option value="1" selected="selected"><?php echo $text_enabled; ?></option>
-							<option value="0"><?php echo $text_disabled; ?></option>
-							<?php } else { ?>
-							<option value="1"><?php echo $text_enabled; ?></option>
-							<option value="0" selected="selected"><?php echo $text_disabled; ?></option>
-							<?php } ?>
-						</select> <?php echo $text_advalorem; ?>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label"><?php echo $entry_suppiles; ?></label>
-					<div class="col-sm-10">
-						<input type="text" name="dpdfrrelais_suppiles" class="form-control" value="<?php echo $dpdfrrelais_suppiles; ?>" size="5" /> <?php echo $text_suppiles; ?>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label"><?php echo $entry_suppmontagne; ?></label>
-					<div class="col-sm-10">
-						<input type="text" name="dpdfrrelais_suppmontagne" class="form-control" value="<?php echo $dpdfrrelais_suppmontagne; ?>" size="5" /> <?php echo $text_suppmontagne; ?>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-2 control-label"><?php echo $entry_sort_order; ?></label>
-					<div class="col-sm-10">
-						<input type="text" name="dpdfrrelais_sort_order" class="form-control" value="<?php echo $dpdfrrelais_sort_order; ?>" size="3" /> <?php echo $text_sort_order; ?>
-					</div>
-				</div>
-				<div class="form-group">
+                        <select name="dpdfrrelais_advalorem" class="form-control">
+                            <?php if ($dpdfrrelais_advalorem) { ?>
+                            <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                            <option value="0"><?php echo $text_disabled; ?></option>
+                            <?php } else { ?>
+                            <option value="1"><?php echo $text_enabled; ?></option>
+                            <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                            <?php } ?>
+                        </select> <?php echo $text_advalorem; ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_retour; ?></label>
+                    <div class="col-sm-10">
+                        <select name="dpdfrrelais_retour" class="form-control">
+                            <option value="0" <?php echo ($dpdfrrelais_retour == 0 ? 'selected="selected"' : ''); ?>><?php echo $text_retour_off; ?></option>
+                            <option value="3" <?php echo ($dpdfrrelais_retour == 3 ? 'selected="selected"' : ''); ?>><?php echo $text_retour_ondemand; ?></option>
+                            <option value="4" <?php echo ($dpdfrrelais_retour == 4 ? 'selected="selected"' : ''); ?>><?php echo $text_retour_prepared; ?></option>
+                        </select> <?php echo $text_retour; ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?php echo $entry_suppiles; ?></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="dpdfrrelais_suppiles" class="form-control" value="<?php echo $dpdfrrelais_suppiles; ?>" size="5" /> <?php echo $text_suppiles; ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?php echo $entry_suppmontagne; ?></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="dpdfrrelais_suppmontagne" class="form-control" value="<?php echo $dpdfrrelais_suppmontagne; ?>" size="5" /> <?php echo $text_suppmontagne; ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><?php echo $entry_sort_order; ?></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="dpdfrrelais_sort_order" class="form-control" value="<?php echo $dpdfrrelais_sort_order; ?>" size="3" /> <?php echo $text_sort_order; ?>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-tax-class"><?php echo $entry_tax_class; ?></label>
                     <div class="col-sm-10">
                       <select name="dpdfrrelais_tax_class_id" id="input-tax-class" class="form-control">
@@ -115,12 +125,12 @@
                         <?php } ?>
                       </select>
                     </div>
-				</div>
+                </div>
 
-			</div>
+            </div>
                 <?php foreach ($geo_zones as $geo_zone) { ?>
                 <div class="tab-pane" id="tab-geo-zone<?php echo $geo_zone['geo_zone_id']; ?>">
-				  <div class="form-group">
+                  <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-status<?php echo $geo_zone['geo_zone_id']; ?>"><?php echo $entry_delivery; ?></label>
                     <div class="col-sm-10">
                       <select name="dpdfrrelais_<?php echo $geo_zone['geo_zone_id']; ?>_status" id="input-status<?php echo $geo_zone['geo_zone_id']; ?>" class="form-control">
@@ -140,12 +150,12 @@
                       <textarea name="dpdfrrelais_<?php echo $geo_zone['geo_zone_id']; ?>_rate" rows="5" id="input-rate<?php echo $geo_zone['geo_zone_id']; ?>" class="form-control"><?php echo ${'dpdfrrelais_' . $geo_zone['geo_zone_id'] . '_rate'}; ?></textarea>
                     </div>
                   </div>
-				  <div class="form-group">
-					<label class="col-sm-2 control-label" for="input-rate<?php echo $geo_zone['geo_zone_id']; ?>"><?php echo $entry_franco; ?></label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="dpdfrrelais_<?php echo $geo_zone['geo_zone_id']; ?>_franco" size="5" value="<?php echo ${'dpdfrrelais_' . $geo_zone['geo_zone_id'] . '_franco'}; ?>"</input> € <?php echo $text_franco; ?>
-					</div>
-				</div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-rate<?php echo $geo_zone['geo_zone_id']; ?>"><?php echo $entry_franco; ?></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="dpdfrrelais_<?php echo $geo_zone['geo_zone_id']; ?>_franco" size="5" value="<?php echo ${'dpdfrrelais_' . $geo_zone['geo_zone_id'] . '_franco'}; ?>"</input> € <?php echo $text_franco; ?>
+                    </div>
+                </div>
                 </div>
                 <?php } ?>
               </div>

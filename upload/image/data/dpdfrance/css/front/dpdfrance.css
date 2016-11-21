@@ -1,10 +1,10 @@
 /**
- * DPD France v5.1.0 shipping module for OpenCart 2.0
+ * DPD France v5.2.0 shipping module for OpenCart 2.0
  *
  * @category   DPDFrance
  * @package    DPDFrance_Shipping
- * @author     DPD S.A.S. <ensavoirplus.ecommerce@dpd.fr>
- * @copyright  2015 DPD S.A.S., société par actions simplifiée, au capital de 18.500.000 euros, dont le siège social est situé 27 Rue du Colonel Pierre Avia - 75015 PARIS, immatriculée au registre du commerce et des sociétés de Paris sous le numéro 444 420 830 
+ * @author     DPD France S.A.S. <support.ecommerce@dpd.fr>
+ * @copyright  2016 DPD France S.A.S., société par actions simplifiée, au capital de 18.500.000 euros, dont le siège social est situé 9 Rue Maurice Mallet - 92130 ISSY LES MOULINEAUX, immatriculée au registre du commerce et des sociétés de Paris sous le numéro 444 420 830
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -64,10 +64,10 @@
 
 #div_dpdfrance_dpd_logo
 {
-	height: 45px;
+    height: 45px;
     margin-top: -30px;
     width: 99%;
-	background:url(../../front/predict/dpd_logo.png) no-repeat right;
+    background:url(../../front/predict/dpd_logo.png) no-repeat right;
 }
 #div_dpdfrance_predict_gsm {
     background-color: #cac4be;
@@ -76,7 +76,7 @@
     display: block;
     font-size: 13px;
     font-family: DPDPlutoSansRegular;
-	cursor: default;
+    cursor: default;
 }
 
 #div_dpdfrance_predict_gsm form {
@@ -94,15 +94,16 @@
     font-size: 16px;
     display: inline-block;
     border-style: none;
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 #predict {
     background: url(../../front/predict/predict_receive.jpg) no-repeat;
     background-size: cover;
+    background-position: 25%;
     font-size: 11px;
     color: #424143;
-	cursor: default;
+    cursor: default;
 }
 
 div.copy {
@@ -133,8 +134,8 @@ div.copy h2 {
 
 .copy ul li
 {
-	list-style-type:none;
-	padding-bottom: 5px;
+    list-style-type:none;
+    padding-bottom: 5px;
 }
 
 div.copy ul li {
@@ -154,8 +155,8 @@ a.dpdfrance_more {
     margin-left: 10px;
     color: #424143;
     font-family: DPDPlutoSansLight;
-	text-decoration: none;
-	font-size: 11px;
+    text-decoration: none;
+    font-size: 11px;
 }
 
 #dpdfrpredict_gsm_dest {
@@ -167,10 +168,14 @@ a.dpdfrance_more {
     padding: 0 10px 0 10px;
     height: 25px;
     font-family: DPDPlutoSansLight;
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 /* Relais */
+div.radio label {
+    width: 100%;
+}
+
 div.dpdfrance_relais_error {
     color: #fff;
     background-color: #A90034;
@@ -179,10 +184,12 @@ div.dpdfrance_relais_error {
     font-size: 13px;
     font-family: DPDPlutoSansRegular;
 }
-.lignepr {
+div.lignepr {
     font-family: DPDPlutoSansLight;
     padding: 10px;
-	display:inline-block;
+    display:inline-block;
+    width: 93%;
+    border-bottom: solid 1px #808285;
 }
 input[value^="dpdfrrelais"] {
     vertical-align: middle;
@@ -193,8 +200,8 @@ div.dpdfrance_header strong {
 }
 a.dpdfrance_more:hover
 {
-	color:#DC0042;
-	cursor:pointer;
+    color:#DC0042;
+    cursor:pointer;
 }
 
 div.dpdfrance_header {
@@ -204,65 +211,68 @@ div.dpdfrance_header {
     color: #fff;
     font-family: 'DPDPlutoSansRegular';
     font-size: 13px;
-	cursor: default !important;
-	font-weight: normal !important;
-	margin-top: 10px;
+    cursor: default !important;
+    font-weight: normal !important;
+    margin-top: 10px;
 }
 
 div.warnmsg
 {
-	background-color:#fff !important;
-	box-sizing:border-box !important;
-	border-style: solid;
-	border-color: #a90034;
-	border-width: 2px;
-	color:#a90034!important;
-	font-family:DPDPlutoSansRegular !important;
-	font-size:13px!important;
-	font-weight:bold;
-	margin:15px 0!important;
-	padding:15px 15px 15px 50px !important;
-	position:relative!important;
-	width:100%!important;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+    background-color:#fff !important;
+    box-sizing:border-box !important;
+    border-style: solid;
+    border-color: #a90034;
+    border-width: 2px;
+    color:#a90034!important;
+    font-family:DPDPlutoSansRegular !important;
+    font-size:13px!important;
+    font-weight:bold;
+    margin:15px 0!important;
+    padding:15px 15px 15px 50px !important;
+    position:relative!important;
+    width:100%!important;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 div.warnmsg::before
 {
-	-moz-osx-font-smoothing:grayscale;
-	-webkit-font-smoothing:antialiased;
-	box-sizing:border-box;
-	color:#a90034;
-	content:"!";
-	font-family:DPDPlutoSansRegular;
-	font-size:42px;
-	font-style:normal;
-	font-weight:400;
-	height:25px;
-	left:20px;
-	line-height:1;
-	margin:auto;
-	position:absolute;
-	width:25px;
-	top: 39%;
-  	-webkit-transform: translateY(-50%);
-  	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    box-sizing:border-box;
+    color:#a90034;
+    content:"!";
+    font-family:DPDPlutoSansRegular;
+    font-size:42px;
+    font-style:normal;
+    font-weight:400;
+    height:25px;
+    left:20px;
+    line-height:1;
+    margin:auto;
+    position:absolute;
+    width:25px;
+    top: 39%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 /* Responsive design */
 /* Condition horizontale (PC) */
 @media only screen and (max-width: 750px) {
-	#predict
-	{
-		background:#fff;
-	}
-	
-	div.copy
-	{
-		padding-left:10px;
-		padding-right:10px;
-	}
+    #predict
+    {
+        background:#fff;
+    }
+    
+    div.copy
+    {
+        padding-left:10px;
+        padding-right:10px;
+    }
+    .lignepr {
+        width: 85% !important;
+    }
 }
